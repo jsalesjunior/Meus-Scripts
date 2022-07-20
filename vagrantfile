@@ -12,11 +12,11 @@ DIR_DESTINY = "/vagrant"
 Vagrant.configure("2") do |config|
 
 # Configuração do BOX 1
-  config.vm.define "Ansible1" do |server1|
+  config.vm.define "Server1" do |server1|
   server1.vm.provider "virtualbox" do |vb|
       vb.memory = '2048'
       vb.cpus   = '2'
-      vb.name   = 'Ubuntu_Ansible1'
+      vb.name   = 'Ubuntu_Bionic_1'
       vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
   end
   server1.disksize.size       = DISKSIZE
@@ -27,12 +27,12 @@ Vagrant.configure("2") do |config|
 end
  
 # Configuração BOX 2
-  config.vm.define "Ansible2" do |server2|
+  config.vm.define "Server2" do |server2|
     server2.vm.box = "ubuntu/bionic64"
     server2.vm.provider "virtualbox" do |vb|
       vb.memory = '1024'
       vb.cpus   = '2'
-      vb.name   = 'Ubuntu_Ansible2'
+      vb.name   = 'Ubuntu_Bionic2'
       vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
   end
   server2.disksize.size       = DISKSIZE
