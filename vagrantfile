@@ -6,24 +6,22 @@
 DISKSIZE = "30GB"
 BOXNAME = "ubuntu/bionic64"
 NET_ADDRESS = "10.10.10"
-DIR_SOURCE = "data/"
-DIR_DESTINY = "/vagrant"
 
 Vagrant.configure("2") do |config|
 
 # Configuração do BOX 1
   config.vm.define "Server1" do |server1|
-  server1.vm.provider "virtualbox" do |vb|
+      server1.vm.provider "virtualbox" do |vb|
       vb.memory = '2048'
       vb.cpus   = '2'
-      vb.name   = 'Ubuntu_Bionic_1'
+      vb.name   = 'Ubuntu_Server_1'
       vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
   end
   server1.disksize.size       = DISKSIZE
+  server1.vm.hostname         = 'Server1'
   server1.vm.box              = BOXNAME
   server1.vm.box_check_update = true
   server1.vm.network "private_network", ip: "#{NET_ADDRESS}.10"
-  server1.vm.synced_folder DIR_SOURCE, DIR_DESTINY
 end
  
 # Configuração BOX 2
@@ -32,13 +30,13 @@ end
     server2.vm.provider "virtualbox" do |vb|
       vb.memory = '1024'
       vb.cpus   = '2'
-      vb.name   = 'Ubuntu_Bionic2'
+      vb.name   = 'Ubuntu_Server_2'
       vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
   end
   server2.disksize.size       = DISKSIZE
+  server2.vm.hostname         = 'Server2'
   server2.vm.box              = BOXNAME
   server2.vm.box_check_update = true
   server2.vm.network "private_network", ip: "#{NET_ADDRESS}.11"
-  server2.vm.synced_folder DIR_SOURCE, DIR_DESTINY
   end
 end
