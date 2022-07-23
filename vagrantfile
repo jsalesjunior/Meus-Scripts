@@ -26,8 +26,7 @@ end
  
 # Configuração BOX 2
   config.vm.define "Server2" do |server2|
-    server2.vm.box = "ubuntu/bionic64"
-    server2.vm.provider "virtualbox" do |vb|
+      server2.vm.provider "virtualbox" do |vb|
       vb.memory = '1024'
       vb.cpus   = '2'
       vb.name   = 'Ubuntu_Server_2'
