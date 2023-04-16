@@ -2,6 +2,7 @@
 # autor: "Joaquim Sales"
 # GitHub: https://github.com/jsalesjunior
 
+
 # Declarando Variáveis
 DISKSIZE = "30GB"
 BOXNAME = "ubuntu/bionic64"
