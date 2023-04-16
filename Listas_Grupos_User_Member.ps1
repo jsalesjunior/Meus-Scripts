@@ -1,7 +1,7 @@
 <#
 Obter usuários de uma lista .txt e listar os grupos que o usuário é membro.
 Exportar para um arquivo .csv.
-Author: Joaquim Sales
+Author: Joaquim Junior
 #>
 
 $users = Get-Content D:\JSM\USUARIOS_GRUPO\Users2.txt
