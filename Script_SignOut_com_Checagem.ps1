@@ -21,6 +21,6 @@ Write-Host ""
 Write-Host "*SOLUÇÃO APLICADA COM SUCESSO*"
 
 }else {
-#Send-MailMessage -SmtpServer correio.intra.bnb -To destino@correio.intra.bnb -from origem@bnb.gov.br -Subject "Abrir Incidente" -Body "Após execução do script o consumo de memória continua acima do esperado"
-Write-Host "E-MAIL ENVIADO PARA ABERTURA DE INCIDENTE NO SDM"
+
+Write-Host "E-MAIL ENVIADO PARA ABERTURA DE INCIDENTE"
 }
