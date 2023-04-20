@@ -1,16 +1,16 @@
-﻿$lstuser= cat D:\JSM\SCRIPTS\USUARIOS_GRUPO\Arquivos\User_data.txt
+﻿$lstuser= cat D:\temp\Arquivos\User_data.txt
 foreach ($item In $lstuser) {
     
     try {
-        #Set-ADUser $item -AccountExpirationDate 01/01/2023 #-WhatIf
-        Get-ADUser $item -Properties * | Select-Object SamAccountName,AccountExpirationDate >> D:\mudanca\Usuarios_alterados1.txt
+        Set-ADUser $item -AccountExpirationDate 01/02/2023 #-WhatIf
+        Get-ADUser $item -Properties * | Select-Object SamAccountName,AccountExpirationDate >> D:\temp\Usuarios_alterados1.txt
        
     }
     catch {
-      #Set-ADUser $item -AccountExpirationDate 01/01/2023 -Server ag001_ger02 #-WhatIf
-      Get-ADUser $item -Properties * -Server ag001_ger02 | Select-Object SamAccountName,AccountExpirationDate >> D:\mudanca\Usuarios_alterados1.txt
+      Set-ADUser $item -AccountExpirationDate 01/01/2023 -Server ag001_ger02 #-WhatIf
+      Get-ADUser $item -Properties * -Server dominio2.com.br | Select-Object SamAccountName,AccountExpirationDate >> D:\temp\Usuarios_alterados1.txt
     
-      #$item  >> D:\mudanca\Usuarios_nao_encontrados.txt
+      $item  >> D:\temp\Usuarios_nao_encontrados.txt
     }
   }
 
@@ -18,7 +18,7 @@ foreach ($item In $lstuser) {
 #EVIDÊNCIA
 #$lstuser.Count
 <#
-$lstuser= cat D:\JSM\SCRIPTS\USUARIOS_GRUPO\Arquivos\User_data.txt
+$lstuser= cat D:\temp\Arquivos\User_data.txt
 foreach ($item In $lstuser) {
  
   Get-ADUser $item -Properties * | Select-Object SamAccountName,AccountExpirationDate
