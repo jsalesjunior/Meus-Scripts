@@ -7,7 +7,7 @@ foreach ($item In $lstuser) {
        
     }
     catch {
-      Set-ADUser $item -AccountExpirationDate 01/01/2023 -Server ag001_ger02 #-WhatIf
+      Set-ADUser $item -AccountExpirationDate 01/01/2023 -Server dominio2.com.br #-WhatIf
       Get-ADUser $item -Properties * -Server dominio2.com.br | Select-Object SamAccountName,AccountExpirationDate >> D:\temp\Usuarios_alterados1.txt
     
       $item  >> D:\temp\Usuarios_nao_encontrados.txt
