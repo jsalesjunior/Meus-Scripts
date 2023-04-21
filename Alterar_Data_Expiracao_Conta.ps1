@@ -16,6 +16,7 @@ foreach ($item In $lstuser) {
 
 
 #EVIDÊNCIA
+
 #$lstuser.Count
 <#
 $lstuser= cat D:\temp\Arquivos\User_data.txt
